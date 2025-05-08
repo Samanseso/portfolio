@@ -1,0 +1,259 @@
+html {
+    box-sizing: border-box;
+    height: 100%;   }
+
+body {
+    background-color: whitesmoke;
+    font-size: 62.5%;
+    background-image: url("./img/bg-day.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: game_paused;
+    src: url("./game_paused.otf");
+}
+
+.pixel {
+    font-family: game_paused;
+}
+
+.container {
+    padding: 0 3rem;
+}
+
+.header {
+
+}
+
+
+.clouds {
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+}
+
+.cloud {
+    position: absolute;
+}
+
+.cloud1 {
+    top: 10px;
+    left: -100px;
+    animation: moveRight 17s linear infinite;
+}
+
+.cloud2 {
+    top: 50px;
+    right: -100px;
+    animation: moveLeft 15s linear infinite;
+}
+
+.cloud3 {
+    top: 100px;
+    left: -100px;
+    animation: moveRight 20s linear infinite;
+}
+
+.cloud4 {
+    top: 150px;
+    right: -100px;
+    animation: moveLeft 22s linear infinite;
+}
+
+.cloud5 {
+    top: 200px;
+    left: -100px;
+    animation: moveRight 35s linear infinite;
+}
+
+.cloud6 {
+    top: 170px;
+    right: -100px;
+    animation: moveLeft 30s linear infinite;
+}
+
+
+@keyframes moveRight { 
+    50%{ right: -100px; } 
+    100% {left: 100vw; }
+}
+
+@keyframes moveLeft { 
+    0% {left: 100vw;}
+    100% {left: -100px;}
+}
+
+
+
+.name {
+    margin: 3rem 0;
+    text-align: left;
+    font-family: game_paused;
+    font-size: 5rem;
+    color: #ffffff;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+        -2px 0px 0 #000,
+        2px 0px 0 #000,
+        0px -2px 0 #000,
+        0px 2px 0 #000;
+}
+
+
+.page1 .btn-con {
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    left: 3.2rem;
+    scale: 2;
+}
+
+.page1 .btn-con2 {
+    overflow: hidden;
+    height: 30px;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.btn-con2 p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding-top: 5.5px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-con3 {
+    position: relative;
+    z-index: 7;
+    transition: all 0.1s ease-in-out;
+}
+
+.btn-bg {
+    position: absolute;
+    z-index: -1;
+    bottom: 4px;
+
+}
+
+
+
+.controls {
+    position: absolute;
+    left: 4rem;
+    bottom: 6rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.controls .btn-con {
+    scale: 1.5;
+}
+
+.controls .btn-con2 {
+    overflow: hidden;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 46px;
+    border-bottom: 1px solid black;
+}
+
+#landscape {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100vw;
+    height: 10rem;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    display: block;
+    bottom: 3rem;
+    left: 20rem;
+}
+
+@media (max-width : 1024px) {
+    .name {
+        font-size: 4rem;
+    }
+
+    .page1 .btn-con {
+        scale: 2;
+    }
+
+    canvas {
+        bottom: 1.5rem;
+        left: 50vw;
+    }
+
+
+}
+
+@media (max-width : 920px)  {
+    canvas {
+        bottom: 4rem;
+        left: 50vw;
+    }
+
+    .controls {
+        left: 0;
+        width: 100vw;
+        bottom: 40vh;
+        padding: 0 4rem;
+        justify-content: space-between;
+    }       
+
+
+}
+
+@media (max-width : 740px) {
+
+    canvas {
+        bottom: 2rem;
+        left: 50vw;
+    }
+
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .controls {
+        bottom: 1rem;
+        padding: 0 1rem;
+    }
+
+    .name {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .page1 .btn-con {
+        left: 50%;
+        scale: 2;
+        transform: translateX(-25%);
+    }
+
+    
+}
